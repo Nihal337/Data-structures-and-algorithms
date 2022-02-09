@@ -28,6 +28,11 @@ Node *BuildTree()
     // Taking input data
     int d;
     cin >> d;
+    
+    
+    if(d==-1) {
+      return NULL ;
+    }
 
     // creating node with the given data
     Node *n = new Node(d);
