@@ -22,6 +22,8 @@ public:
 // root node of my tree simple
 
 
+// Preorder Build of the Tree i.e we start from Root , left , Right Tree
+
 Node *BuildTree()
 {
 
