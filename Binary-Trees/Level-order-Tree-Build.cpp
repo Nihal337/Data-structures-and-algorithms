@@ -8,15 +8,16 @@
      	 cin>>d ;
      	 queue<Node*>q ;
      	 
-    // First Create Root Node
+                           // First Create Root Node
     Node*root = new Node(d)  ;
     
-    // push root to the queue
+                          // push root to the queue
     q.push(root) ;
     
     // Then For all the other nodes,
     // read two data from the input ,the first data will be the left child of current node
     // and second data will be the right child of currrent data
+    // push both child of current node into the queue.    
     
      while(!q.empty()) {
      	
