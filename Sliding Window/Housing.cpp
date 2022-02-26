@@ -28,3 +28,28 @@
      Final Approach : Using Sliding Window
      
      - TC : O(N)
+      
+         void PlotsSum(vector<int>&plots,int k) {
+		
+		            int n= plots.size() ;
+      
+	            	int i=0,j=0 ,cs = 0 ;
+		
+	               	while(j<n) {
+			
+			
+	           		// Expanding the Window
+	               	cs += plots[j] ;
+	                j++ ;
+			
+		               	// What if sum >k
+		               	// contracting the Window
+			
+		              	while(cs > k and i<j) {
+		              		cs -= plots[i] ;
+			               	i++ ;
+			}
+		               	// check if sum == k
+		          	if(cs==k) cout<<i<<" "<<j-1<<endl ;
+		}
+	}
