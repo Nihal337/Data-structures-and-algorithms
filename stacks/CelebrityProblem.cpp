@@ -62,3 +62,51 @@ class Solution
         
     }
 };
+
+
+
+// without using stack
+
+TC : O(N) SC : O(1)
+
+class Solution 
+{
+    
+    public:
+    bool knows(int a,int b,vector<vector<int>>&M) {
+        if(M[a][b] == 1)  return true ;
+        else return false ;
+    }
+    //Function to find if there is a celebrity in the party or not.
+    int celebrity(vector<vector<int> >& M, int n) 
+    {
+       // compare and eliminate the one that is not celebrity 
+       
+       // lets say 0th student can be a celeb
+       int candidate = 0 ;
+       // compare with each student and update the val of candidate
+       for(int j=1 ;j<n ;j++) {
+           
+           if(knows(candidate,j,M)) {
+               candidate = j ;// candidate knows j that means 0 can not be a celeb , hence updated it
+           }
+       }
+       // after the loop the candidate may or may not be a celeb 
+       
+       // I will Check  candidate with each  perseon
+       // if my candidate knows anyone or noone knows candidate then candidate cannot be a celeb 
+    //   cout<<candidate<<endl ;
+      for(int k=0 ;k<n ;k++) {
+           
+          if(candidate==k) continue ;
+          if(knows(candidate,k,M) || !knows(k,candidate,M)) return -1 ;
+        
+      }
+      return candidate ;
+       
+    }
+};
+
+
+  // } Driver Code Ends
+
